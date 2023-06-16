@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap');
+*{
+    margin:0;
+    padding:0;
+}
+
+body {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, rgb(251, 247, 6));
+	background-size: 400% 400%;
+	animation: gradient 12s ease infinite;
+	height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+nav{
+    background-color: black;
+    color:white;
+    height:72px;
+    font-size: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:0px 15px;
+    font-family: 'Lilita One', cursive;
+}
+nav ul{
+    list-style-type: none;
+    
+    
+}
+
+.waviy {
+    position: relative;
+  }
+  .waviy span {
+    position: relative;
+    display: inline-block;
+    font-size: 40px;
+    color: #fff;
+    text-transform: uppercase;
+    animation: flip 2s infinite;
+    animation-delay: calc(.1s * var(--i))
+  }
+  @keyframes flip {
+    0%,80% {
+      transform: rotateY(360deg) 
+    }
+}
+
+.container{
+    display: grid;
+    position:relative;
+    grid-template-rows: repeat(3,10vw);
+    grid-template-columns: repeat(3,10vw);
+    justify-content: center;
+    margin:30px;
+    font-family: 'Finger Paint', cursive;
+}
+
+.game-container{
+    display:-webkit-flex;
+    justify-content: center;
+
+}
+
+.box{
+    border:3px solid black;
+    border-radius: 0px;
+    font-size: 8vw;
+    cursor:pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgbox{
+    margin-top: auto;
+    width:400px;
+    margin-bottom: auto;
+}
+
+.imgbox img{
+    margin-left: 10px;
+    width: 10px;
+    transition: width 1s ease-in-out;
+}
+/* .imgbox img.yayyy {
+    margin-top: -30px;
+    width:0px;
+    transition: width 1s ease-in-out;
+  }
+
+.imgbox img.draw{
+    width:100px;
+    
+}
+
+.imgbox img.welcome {
+    width: 100px;
+    transition: width 1s ease-in-out;
+} */
+.box:hover{
+    background-color: rgb(0,0,0,.25) ;
+    color:black;
+}
+
+.bt-0{
+    border-top: none;
+}
+.bl-0{
+    border-left:none;
+}
+.bb-0{
+    border-bottom:none;
+}
+.br-0{
+    border-right:none;
+}
+
+.game-info{
+    
+    font-family: "finger paint", cursive;
+
+}
+
+.game-title{
+    font-family:"finger paint", cursive;
+    font-size: 50px;
+    margin-top: 30px;
+}
+
+
+
+.reset{
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-family:"finger paint";
+    font-weight: bold;
+    font-size: large;
+    color:brown;
+    background-color:#DAA520;
+    /* margin-left:45px; */
+    margin-top: 30px;
+}
+
+.box.win {
+    background-color: rgba(0, 0, 0, 0.25);
+    color: black;
+    font-weight: bold;
+  }
+
+.line{
+    background-color:rgb(227, 17, 17);
+    height:10px;
+    position:absolute;
+    width:0vw;
+    transition: width 1s ease-in-out;
+    border-radius: 60%;
+    
+    
+}
+
+.game-design{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin:0px 0px;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin:170px 80px;
+    padding: 10px 10px;
+    box-sizing: border-box;
+    font-size: 25px;
+    border-radius: 10px;
+    border: solid rgb(13, 13, 110);
+    border-style: dashed;
+    border-width: 5px;
+}
+/* Styles for smaller screens (phones) */
+
+@media only screen and (max-width: 360px) {
+    body {
+      font-size: 24px;
+      overflow-x: hidden;
+      justify-content: center;
+      align-items: center;
+      /* height: 100vh; */
+    }
+  
+    nav {
+      font-size: 5px;
+      width:103%;
+      justify-content: center;
+    }
+
+    .game-container{
+        display:flex;
+        flex-wrap: wrap;
+        /* justify-content: center;
+        align-items: center;
+        justify-items: center;
+        align-content: center; */
+    }
+  
+    .container {
+      grid-template-rows: repeat(3, 23vw);
+      grid-template-columns: repeat(3, 23vw); /* Increase the cell width for smaller screens */
+
+    }
+  
+    .box {
+      font-size: 17vw;
+    }
+    .imgbox{
+        width:230px;
+        margin-top: 0px;
+    }
+
+    .game-design{
+        margin-left: -80px;
+    }
+    .game-title {
+      font-size: 27px;
+      margin-top: 10px;
+      margin-left: -15px;
+    }
+  
+    .reset {
+      padding: 5px 10px;
+      font-size: small;
+      margin-top: 10px;
+    }
+  
+    .info {
+      font-size: 15px;
+      margin-left: -20px;
+      padding: 10px;
+      margin-right: -70px;
+      margin-top: 80px;
+    }
+  }
+
